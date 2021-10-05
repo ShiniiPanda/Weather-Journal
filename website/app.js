@@ -9,3 +9,13 @@ const unit = "&units=metric"; // Using Metric for this journal.
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+
+async function getWeather(url){
+    const res = await fetch(url);
+    try {
+        const weatherData = res.json();
+        console.log(weatherData);
+    } catch (e) {
+        console.log("An error has occured: " + e);
+    }
+}
