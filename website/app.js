@@ -10,6 +10,10 @@ const unit = "&units=metric"; // Using Metric for this journal.
 let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
+document.getElementById('generate').addEventListener('click', () => {
+    getWeather(baseURL+key+unit);
+})
+
 async function getWeather(url){
     const res = await fetch(url);
     try {
@@ -19,3 +23,4 @@ async function getWeather(url){
         console.log("An error has occured: " + e);
     }
 }
+
