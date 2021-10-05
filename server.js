@@ -26,3 +26,10 @@ const server = app.listen(port, running);
 function running() {
     console.log("Server is currently running on localhost:" + port);
 }
+
+// Get Route for projectData
+
+app.get('getData', (req, res) => {
+    res.send(projectData);
+});
+
