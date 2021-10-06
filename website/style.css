@@ -17,14 +17,24 @@ body{
     font-family: 'Oswald', sans-serif;
 }
 
-.holder{
-
+.holder.headline{
+    font-size: 3em;
+    text-align: center;
 }
+
+.holder.zip {
+    text-align: center;
+    margin: auto;
+}
+
 
 .entry{
     background: rgba(59, 74, 107, .4);
 }
 
+#generate{
+    float: right;
+}
 #entryHolder{
 
 }
@@ -77,6 +87,10 @@ button{
 }
 h1{
     font-size: 36px;
+}
+
+hr {
+    color: #f0d43a;
 }
 
 textarea{
