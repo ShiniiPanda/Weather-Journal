@@ -29,7 +29,14 @@ function running() {
 
 // Get Route for projectData
 
-app.get('getData', (req, res) => {
+app.get('/getData', (req, res) => {
     res.send(projectData);
 });
 
+app.post('/postWeather', (req, res) => {
+    let fetchedData = req.body;
+    projectData.temp = fetchedData.temp;
+    projectData.date = fetchedData.date;
+    projectData.response = fetchedData.resposne;
+    console.log(fetchedData);
+});
