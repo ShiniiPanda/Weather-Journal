@@ -16,6 +16,8 @@ document.getElementById('generate').addEventListener('click', () => {
     let userResponse = document.getElementById('feelings').value;
     getWeather(baseURL+zipcode+key+unit).
     then(function(weatherData) {
+        console.log(weatherData);
+        if (weatherData.cod == 404) {alert("Invalid zipcode, cannot fetch weather information for provided zipcode."); return;}
         postWeather(postRoute, {temp: weatherData.main.temp, date: newDate, response: userResponse});
     });
 })
