@@ -26,3 +26,20 @@ async function getWeather(url){
         return -1;
     }
 }
+
+async function postWeather(url, data) {
+    const sendResponse = await fetch(url, {
+        method: "POST",
+        credentials: "same-origin",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    });
+    try {
+        const newWeather = await sendResponse.json();
+        return newWeather();
+    } catch (e) {
+        console.log("An error has occured: " + e);
+    }
+}
