@@ -13,18 +13,19 @@ let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 document.getElementById('generate').addEventListener('click', () => {
-    let zipcode = document.getElementById('zip').value;
+    let zipcode = document.getElementById('zip').value; 
     const userResponse = document.getElementById('feelings').value;
-    getWeather(baseURL+zipcode+key+unit).
+    getWeather(baseURL+zipcode+key+unit). // Retrieve weather form OpenWeatherAPI
     then(function(weatherData) {
         console.log(weatherData);
+        // In case of invalid zipcode
         if (weatherData.cod == 404) {alert("Invalid zipcode, cannot fetch weather information for provided zipcode."); return;}
-        postWeather(postRoute, {temp: weatherData.main.temp, date: newDate, response: userResponse})
-        .then(updateRecent({temp: weatherData.main.temp, date: newDate, response: userResponse}));
+        postWeather(postRoute, {temp: weatherData.main.temp, date: newDate, response: userResponse}) // Upload weather data to server
+        .then(updateRecent({temp: weatherData.main.temp, date: newDate, response: userResponse})); // Update UI.
     });
 })
 
-async function getWeather(url){
+async function getWeather(url){ // Retrieve weather form OpenWeatherAPI
     const res = await fetch(url);
     try {
         const weatherData = await res.json();
@@ -35,7 +36,7 @@ async function getWeather(url){
     }
 }
 
-async function postWeather(url, data = {}) {
+async function postWeather(url, data = {}) { // Provide the server with the weather information through POST HTML route.
     const sendResponse = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
@@ -52,7 +53,7 @@ async function postWeather(url, data = {}) {
     }
 }
 
-async function getRecent(url){
+async function getRecent(url){ // Get the data stored in the server.js file.
     const response = await fetch(url);
     try {
         const recentWeather = await response.json();
@@ -63,7 +64,7 @@ async function getRecent(url){
     }
 }
 
-function updateRecent(data){
+function updateRecent(data){ // Update UI Elements with the new entry information.
     document.getElementById('temp').innerHTML = `<strong>Temperature</strong>: ${data.temp}`;
     document.getElementById('date').innerHTML = `<strong>Date</strong>: ${data.date}`;
     document.getElementById('content').innerHTML = `<strong>Mood</strong>: ${data.response}`;
