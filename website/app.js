@@ -31,7 +31,7 @@ async function getWeather(url){
         //console.log(weatherData);
         return weatherData;
     } catch (e) {
-        console.log("An error has occured: " + e);
+        console.log("An error has occured fetching API weather data: " + e);
     }
 }
 
@@ -48,7 +48,7 @@ async function postWeather(url, data = {}) {
         const newWeather = await sendResponse.json();
         return newWeather;
     } catch (e) {
-        console.log("An error has occured: " + e);
+        console.log("An error has occured whilst posting weather data to server: " + e);
     }
 }
 
