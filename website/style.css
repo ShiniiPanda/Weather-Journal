@@ -8,7 +8,8 @@ body{
     grid-auto-rows: minmax(150px, auto);
     /* grid-template-columns:  */
     height:100vh;
-    background: #f23557;
+    background: rgb(140,135,228);
+    background: linear-gradient(90deg, rgba(140,135,228,1) 10%, rgba(14,156,209,1) 50%, rgba(140,135,228,1) 90%); 
     color: #f0d43a;
     justify-content: center;
     grid-gap: 1em;
