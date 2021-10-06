@@ -1,5 +1,5 @@
 body{
-    background: #fffff8;
+    background: #d657f0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -12,7 +12,7 @@ body{
     background: linear-gradient(90deg, rgba(140,135,228,1) 10%, rgba(14,156,209,1) 50%, rgba(140,135,228,1) 90%); 
     color: #f0d43a;
     justify-content: center;
-    grid-gap: 1em;
+    grid-gap: 1em;;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 }
@@ -55,7 +55,8 @@ body{
 
 }
 .title{
-
+    font-size: 25px;
+    text-align: center;
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
@@ -89,6 +90,10 @@ h1{
     font-size: 36px;
 }
 
+strong {
+    color: greenyellow;
+}
+
 hr {
     color: #f0d43a;
 }
@@ -98,6 +103,9 @@ textarea{
     color: #f0d43a;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
+    width: 400px;
+    height: 100px;
+    resize: none;
 }
 /* Reset style for HTML element on active to have no border*/
 input:focus,
