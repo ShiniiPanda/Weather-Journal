@@ -2,7 +2,7 @@
 
 // Open Weather API Information
 const baseURL = "https://api.openweathermap.org/data/2.5/weather?zip="; // Base url using zip codes.
-const key = "&appid=b3671da29b730a0a7b223abfec595c2b"; // API Key.
+const key = "&appid=" + "INSERT API KEY HERE"; // API Key.
 const unit = "&units=metric"; // Using Metric for this journal.
 const postRoute = '/postWeather';
 const getRoute = '/getWeather';
